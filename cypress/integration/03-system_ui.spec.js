@@ -5,7 +5,7 @@ describe('OrangeHRM - Sistema Open Source de Gestão de RH', function() {
         cy.visit('https://opensource-demo.orangehrmlive.com')
     })
     
-    it('Valida se todos os menus foram carregado ao fazer login com sucesso', function() {
+    it('Valida se todos os menus foram carregados ao fazer login com sucesso', function() {
         cy.validaUsuarioPadrao()
         cy.validaMenus()
     })
