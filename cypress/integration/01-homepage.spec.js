@@ -6,7 +6,7 @@ describe('OrangeHRM - Sistema Open Source de Gestão de RH', function() {
     })
 
     it('Verifica o título da aplicação', function() {
-        cy.title().should('be.equal', 'OrangeHRM')
+        cy.validaTitulo()
     })
 
     it('Verifica mensagem de erro em caso login incorreto', function() {
@@ -19,6 +19,5 @@ describe('OrangeHRM - Sistema Open Source de Gestão de RH', function() {
     
     it('Validar usuário e senha padrão', function() {
         cy.validaUsuarioPadrao()
-        cy.get('#welcome').should('be.visible')
     })
 })
