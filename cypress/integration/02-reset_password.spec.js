@@ -5,7 +5,7 @@ describe('2 - OrangeHRM - Teste de reset de senha', function() {
         cy.visit('https://opensource-demo.orangehrmlive.com/index.php/auth/requestPasswordResetCode')
     })
 
-    it.only('2.1 - Valida mensagem ao resetar senha | usuário padrão', function() {
+    it('2.1 - Valida mensagem ao resetar senha | usuário padrão', function() {
         cy.validaResetSenhaUsuarioPadrao()
     })
 
