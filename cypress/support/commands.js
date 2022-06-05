@@ -23,6 +23,19 @@ Cypress.Commands.add('validaUsuarioPadrao', function() {
     cy.get('#welcome').should('be.visible')
 })
 
+Cypress.Commands.add('validaResetSenhaUsuarioPadrao', function() {
+    cy.get('#securityAuthentication_userName').type('Admin')
+    cy.get('#btnSearchValues').should('be.visible').click()
+    cy.get('.message').should('be.visible', {delay: 1000}) || cy.get('#divContent').should('have.text', 'Instructions for resetting your password have been sent to paul1@osohrm.com')
+})
+
+Cypress.Commands.add('validaResetSenhaUsuarioNaoPadrao', function() {
+    cy.get('#securityAuthentication_userName').type('Admin@')
+    cy.get('#btnSearchValues').should('be.visible').click()
+    cy.get('.message').should('be.visible', {delay: 1000})
+    ///cy.get('h1').should('have.text', 'Instruction Sent !')
+})
+
 Cypress.Commands.add('validaMenus', function() {
     cy.get('#menu_admin_viewAdminModule > b').should('be.visible')
     cy.get('#menu_pim_viewPimModule > b').should('be.visible')
